@@ -64,8 +64,6 @@ class Game {
 
                 let sprite = this.animals[keyCode - 48]
                 if (!sprite.evil) {
-
-                    console.log("Fail!")
                     this.score = 0
                     this.interval = 160 - (this.score * 6 < 1 ? 0 : this.score * 6)
                     this.streaks.push(this.inARow - 1)
@@ -76,7 +74,6 @@ class Game {
                     sprite.remove()
                     delete this.animals[keyCode - 48]
                 } else {
-                    console.log("Success")
                     this.inARow += 1
                     if (this.inARow % 5 == 0) {
                         this.multiplier += 0.4
@@ -93,8 +90,6 @@ class Game {
         }
     }
     game() {
-        //console.log(`${game.ticks}:${game.interval}`)
-
         this.keyboardCode()
         if (!this.countDownOver) {
             this.countDown();
@@ -291,30 +286,3 @@ class Game {
         }
     }
 }
-
-/*
-
-key code evil
-if (keyIsPressed) {
-    if (keyCode == (sprite.key + 48)) {
-    	sprite.inARow(true)
-        console.log("Fail!")
-        sprite.updateScore(-5)
-        self.availableKeys.push(sprite.key)
-        sprite.renderSprite = false
-    }
-
-}
-
-key code good
-if (keyIsPressed) {
-    if (keyCode == (sprite.key + 48)) {
-        console.log("Success")
-        sprite.inARow()
-        sprite.updateScore(1)
-        self.availableKeys.push(sprite.key)
-        sprite.renderSprite = false
-    }
-
-}
-*/
