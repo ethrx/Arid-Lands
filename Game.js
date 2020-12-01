@@ -56,6 +56,7 @@ class Game {
             if (mouseX >= 1270 && mouseX <= 1280) {
                 if (mouseY >= 0 && mouseY <= 10) {
                     this.multiplier += 1
+                    this.doh.play()
                 }
             }
         }
@@ -71,6 +72,7 @@ class Game {
 
                     this.multiplier = 1
                     this.sprites.availableKeys.push(sprite.key)
+                    this.tsk.play();
                     sprite.remove()
                     delete this.animals[keyCode - 48]
                 } else {
@@ -81,6 +83,7 @@ class Game {
 
                     this.score += 1 * this.multiplier
                     this.sprites.availableKeys.push(sprite.key)
+                    this.bling.play();
                     sprite.remove()
 
                     delete this.animals[keyCode - 48]
@@ -140,6 +143,7 @@ class Game {
                                 i.remove()
                             })
                             self.player.remove()
+                            self.game_over.play()
                         }
                         // not evil 
                         else {
@@ -147,6 +151,7 @@ class Game {
                             sprites.availableKeys.push(animal.key)
                             animal.renderSprite = false
                             animal.remove()
+                            self.boop.play()
                         }
                     }
                     // doesn't collide with player 
