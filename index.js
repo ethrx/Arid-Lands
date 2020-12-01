@@ -101,35 +101,18 @@ function draw() {
     
     titleBg.moving = true
     if (currentScore < 300) {
-        console.log("bg1")
         titleBg.bg = bg1
     } else if (currentScore > 300 && currentScore < 500) {
-        console.log("bg2")
         titleBg.bg = bg2
     } else if (currentScore > 500 && currentScore < 700) {
-        console.log("bg3")
         titleBg.bg = bg3
     } else if (currentScore > 700 && currentScore < 1000) {
-        console.log("bg4")
         titleBg.bg = bg4
     } else if (currentScore > 1000){
         titleBg.bg = crabGif
         titleBg.moving = false
     }
     titleBg.show();
-        /*
-
-        if(200 > (game.score * 10) > 100){
-            titleBg.bg = bg2;
-        } else if(300 > (game.score * 10) > 200){
-            titleBg.bg = bg3;
-        } else if((game.score * 10) > 300){
-            titleBg.bg = bg4;
-        } else {
-            titleBg.bg = bg1;
-        }*/
-
-
 
     // code after this (background must be first)
     // render a modal
