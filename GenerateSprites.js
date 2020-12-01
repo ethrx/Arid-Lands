@@ -30,8 +30,6 @@ class GenerateSprites {
         this.availableKeys.splice(kkey, 1)
         sprite.keyi = this.keys[sprite.key]
         sprite.keyi.resize(50,50)
-            //console.log(crab.key)
-            //console.log(this.keys[crab.key])
         sprite.move = function(speed, self) {
             sprite.position.x -= speed
             image(sprite.keyi, sprite.position.x - 25, sprite.position.y - 100)
