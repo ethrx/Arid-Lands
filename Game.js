@@ -65,7 +65,7 @@ class Game {
 
                 let sprite = this.animals[keyCode - 48]
                 if (!sprite.evil) {
-                    this.score = 0
+                    this.score = this.score / 4
                     this.interval = 160 - (this.score * 6 < 1 ? 0 : this.score * 6)
                     this.streaks.push(this.inARow - 1)
                     this.inARow = 1
